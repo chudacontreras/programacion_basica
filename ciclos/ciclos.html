@@ -3,11 +3,83 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Ciclos</title>
-  <script type="text/javascript" src = "js/document.js">
+  <script type="text/javascript">
+  //alert("No Funciona");
+  //ambito de las variables
+  var c, t, b;
+  function inicio()
+  {
+  	//var c = document.getElementById("caja");
+  	c = document.getElementById("caja");
+  	//c.innerHTML += "<strong>Hola desde el innerHTML</strong><br /><em>para la caja</em>";
+  	//var gritos = 30;
+  	//Iteración
+  	/*while(gritos > 0)
+  	{
+  		c.innerHTML += "a";
+  		//elemento iterador
+  		gritos = gritos -1;
+  		//gritos--;
+  	}
+  	c.innerHTML += "h!";*/
+  	//Residuo MOD
+  	/*var numero = 1;
+  	var residuo;
+  	residuo = numero % 2;
+  	residuo = numero / 2;
+  	c.innerHTML = residuo;*/
+  	//ciclo que imprime solo numeros pares de atras para adelante
 
+	/* 	var numeros = 1;
+  	var residuo;
+
+  	while(numeros <= 50)
+  	{
+  		residuo = numeros % 2;
+  		if(residuo == 0)
+  		{
+  			c.innerHTML += " " + numeros;
+  		}
+  		numeros++;
+
+  	}*/
+  	
+  	//captura de numeros en pantalla
+  	//var t = document.getElementById("numero");
+  	t = document.getElementById("numero");
+  	//var b = document.getElementById("botoncito");
+  	b = document.getElementById("botoncito");
+  	b.addEventListener("click", calcular);
+  	function calcular()
+  	{
+  		//alert(t.value);
+  		//var numero = t.value;
+  		//Forzamos a numero usando Number
+  		var numero = Number(t.value);
+  		//alert(numero +1);
+  		var calculo = 1;
+  		var n = 1;
+  		/*while(n <= numero)
+  		{
+  			calculo = calculo * n;
+  			n++;
+  		}*/
+  		for (n=1; n<= numero; n++) 
+  		{
+  			calculo = calculo * n;
+  		};
+  		c.innerHTML = "<strong>" + calculo + "</strong>";
+  	}
+  }
   </script>
 </head>
 <body>
-  
+<!--Evento de unn objeto -->
+<input type="text" id="numero"/>
+<input type="button" id="botoncito" value="Enviar"/>
+  <!--<div id="caja">Hola desde la Caja!</div>-->
+  <div id="caja">Nada</div>
+  <div>Otra Caja!</div>
+  <script type="text/javascript">inicio();</script>
 </body>
 </html>
