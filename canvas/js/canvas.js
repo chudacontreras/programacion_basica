@@ -37,16 +37,16 @@ function inicio()
 function dibujarGrilla(l)
 {
 	var ancho = 300, alto =300;
-	var lineas = 10;
 	var linea;
-	var limiteX = ancho / lineas;
-	var limiteY = alto / lineas;
+	var anchodeLinea = 30;
+	var limiteX = ancho / anchodeLinea;
+	var limiteY = alto / anchodeLinea;
 	for (linea=0; linea<=limiteX; linea++)
 	{
 		l.beginPath();
 		l.strokeStyle ="#AAA";
-		l.moveTo(linea*10, 0);
-		l.lineTo(linea*10,300);
+		l.moveTo(linea*anchodeLinea, 0);
+		l.lineTo(linea*anchodeLinea,300);
 		l.closePath();
 		l.stroke();
 
@@ -55,8 +55,8 @@ function dibujarGrilla(l)
 	{
 		l.beginPath();
 		l.strokeStyle ="#AAA";
-		l.moveTo(0, linea*10);
-		l.lineTo(300, linea*10);
+		l.moveTo(0, linea*anchodeLinea);
+		l.lineTo(300, linea*anchodeLinea);
 		l.closePath();
 		l.stroke();
 	}
