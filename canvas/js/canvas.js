@@ -1,13 +1,17 @@
 //los alert solo para verificar que funciona
 
 //alert("Fuera");
-var dibujo, cuadro;
+var dibujo, cuadro, t, b;
+
 function inicio()
 {
+	t = document.getElementById("usuario");
+	b = document.getElementById("dibujalo");
 	//alert("Dentro");
 	dibujo = document.getElementById("dibujito");
 	cuadro = dibujo.getContext("2d");
-	dibujarGrilla(cuadro);
+	//dibujarGrilla(cuadro);
+	b.addEventListener("click", dibujarGrilla);
 
 	/*cuadro.moveTo(0,0);
 	cuadro.lineTo(300,0);
@@ -34,19 +38,24 @@ function inicio()
 	cuadro.stroke();
 
 }
-function dibujarGrilla(l)
+function dibujarGrilla()
 {
+	var l = cuadro;
+	var rayas = Number(t.value);
+
 	var ancho = 300, alto =300;
 	var linea;
-	var anchodeLinea = 30;
+	//var anchodeLinea = 30;
+	var anchodeLinea = ancho / rayas;
 	var limiteX = ancho / anchodeLinea;
 	var limiteY = alto / anchodeLinea;
 	for (linea=0; linea<=limiteX; linea++)
 	{
+		punto = linea*anchodeLinea;
 		l.beginPath();
 		l.strokeStyle ="#AAA";
-		l.moveTo(linea*anchodeLinea, 0);
-		l.lineTo(linea*anchodeLinea,300);
+		l.moveTo(punto, 0);
+		l.lineTo(punto,ancho);
 		l.closePath();
 		l.stroke();
 
